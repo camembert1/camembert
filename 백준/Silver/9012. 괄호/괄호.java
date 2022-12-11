@@ -3,14 +3,13 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
 		
 		for (int i = 0; i < num; i++) {
 			String vps = sc.next();
 			System.out.println(findVPS(vps));
-			
 		}
 	}
 
@@ -18,7 +17,7 @@ public class Main {
 		while (vps.contains("()")) {
 			vps = vps.replace("()", "");
 		}
-		if (vps.equals("")) return "YES";
-		else return "NO";
+		return (vps.equals(""))? "YES": "NO";
 	}
+	
 }
