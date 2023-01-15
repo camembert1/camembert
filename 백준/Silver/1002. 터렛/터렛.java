@@ -12,12 +12,12 @@ public class Main {
 			
 			int dif = Math.abs(r2-r1);
 			int sum = r2 + r1;
-			double d = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+			double d = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 			
 			if (dif < d && d < sum) result = 2;
 			if (dif == d || sum == d) result = 1;
 			if (d < dif || sum < d) result = 0;
-			if (dif == 0 && x2 == x1 && y2 == y1) result = -1;
+			if (d == 0 && dif == 0) result = -1;
 			
 			System.out.println(result);
 		}
