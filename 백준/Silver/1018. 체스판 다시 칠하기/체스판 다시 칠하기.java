@@ -1,15 +1,18 @@
 import java.util.*;
+import java.io.*;
 
 public class Main {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		
-		int N = sc.nextInt(), M = sc.nextInt();
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int N = Integer.parseInt(st.nextToken());
+		int M = Integer.parseInt(st.nextToken());
 		String[] board = new String[N];
 		for (int i = 0; i < N; i++) {
-			board[i] = sc.next();
+			board[i] = br.readLine();
 		}
-        
+		
 		String[] corrBoard = {"WBWBWBWB", "BWBWBWBW"};
 		int cnt = 0;
 		int result = 33;
@@ -27,9 +30,10 @@ public class Main {
 				if (cnt > 32) cnt = 64 - cnt;
 				if (cnt < result) result = cnt;
 				cnt = 0;
-                
+				
 			}
 		}
-		System.out.println(result);
+		bw.write(result+"");
+		bw.close();
 	}
 }
